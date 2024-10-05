@@ -1,4 +1,4 @@
-import { Box, Container, Grid, TextField } from '@mui/material'
+import { Container, Grid, TextField } from '@mui/material'
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 import AttachEmailOutlinedIcon from '@mui/icons-material/AttachEmailOutlined'
 import LinkedinImage from '@/modules/portfolio/assets/linkedin.webp'
@@ -8,8 +8,42 @@ import { ContactArticleWrapper } from './styles'
 import ActionButton from '../../../common/ActionButton'
 import IconLabel from '../../../common/IconLabel'
 import Image from 'next/image'
+import { useState } from 'react'
 
 const ContactArticle = () => {
+  const [loading, setLoading] = useState<boolean>(false)
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault() // Prevenir la recarga de la página
+    const elements = e.target.querySelectorAll('input, textarea')
+    const data: any = {}
+    console.log(elements)
+    elements.forEach((element: any) => {
+      data[element.name] = element.value
+    })
+
+    try {
+      setLoading(true)
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+      console.log(result)
+    } catch (error) {
+      console.error('Error al enviar el correo:', error)
+    } finally {
+      setLoading(false)
+      elements.forEach((element: any) => {
+        element.value = ''
+      })
+    }
+  }
+
   return (
     <ContactArticleWrapper>
       <Container>
@@ -55,45 +89,59 @@ const ContactArticle = () => {
           </div>
 
           <div className='form-container'>
-            <div className='form-content'>
-              <Grid container spacing={4}>
-                <Grid item md={12}>
-                  <h1 className='title'>Algún proyecto en mente?</h1>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    id='name'
-                    label='Nombres'
-                    variant='standard'
-                    fullWidth
-                  />
-                </Grid>
+            <form className='form-content' onSubmit={handleSubmit}>
+              <fieldset
+                style={{ border: 0, opacity: loading ? 0.5 : 1 }}
+                disabled={loading}
+              >
+                <Grid container spacing={4}>
+                  <Grid item md={12}>
+                    <h1 className='title'>Algún proyecto en mente?</h1>
+                  </Grid>
 
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    id='email'
-                    label='Correo electrónico'
-                    variant='standard'
-                    fullWidth
-                  />
-                </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      name='name'
+                      label='Nombres'
+                      variant='standard'
+                      fullWidth
+                      required
+                    />
+                  </Grid>
 
-                <Grid item xs={12} md={12}>
-                  <TextField
-                    id='message'
-                    label='Mensaje'
-                    variant='standard'
-                    rows={3}
-                    multiline
-                    fullWidth
-                  />
-                </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      name='email'
+                      type='email'
+                      label='Correo electrónico'
+                      variant='standard'
+                      fullWidth
+                      required
+                    />
+                  </Grid>
 
-                <Grid item xs={12} md={12}>
-                  <ActionButton label='Enviar ahora' />
+                  <Grid item xs={12} md={12}>
+                    <TextField
+                      name='message'
+                      required
+                      label='Mensaje'
+                      variant='standard'
+                      rows={3}
+                      multiline
+                      fullWidth
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} md={12}>
+                    <ActionButton
+                      type='submit'
+                      label='Enviar ahora'
+                      loading={loading}
+                    />
+                  </Grid>
                 </Grid>
-              </Grid>
-            </div>
+              </fieldset>
+            </form>
           </div>
         </div>
       </Container>
