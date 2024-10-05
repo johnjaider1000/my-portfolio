@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router'
 import { createContext, useEffect, useState } from 'react'
 import getGeoIP from '@/api/externals/geoip'
-import { CURRENT_LANG } from '@/core/constants/cookieConstants'
+import { CURRENT_LANG } from '@/modules/core/constants/cookieConstants'
 import {
   getLocalStorageFromKey,
   setLocalStorageFromKey,
-} from '@/core/utils/localStorage'
-import { ContextProps } from '@/core/interfaces/context'
-import { setCookie } from '@/core/utils/cookie'
+} from '@/modules/core/utils/localStorage'
+import { ContextProps } from '@/modules/core/interfaces/context'
+import { setCookie } from '@/modules/core/utils/cookie'
 
 export interface GeoIP {
   ip: string
@@ -33,6 +33,8 @@ export interface GeneralContextProps {
   lang: string
   env: EnvProps
   setLang: (lang: string) => void
+  bannerAnimated: boolean
+  toggleBannerStatus: () => void
 }
 
 export const GeneralContext = createContext({} as GeneralContextProps)
@@ -44,6 +46,7 @@ export const GeneralContextProvider = ({
   pageProps,
 }: ContextProps) => {
   const { locale, pathname, push } = useRouter()
+  const [bannerAnimated, setBannerStatus] = useState<boolean>(true)
   const [env, setEnv] = useState<any>(pageProps?.env)
   const [lang, setCurrentLang] = useState<string>(
     pageProps?.lang ||
@@ -54,7 +57,6 @@ export const GeneralContextProvider = ({
   const [geoip, setGeoIP] = useState<GeoIP>()
 
   const saveLangPreference = (lang: string) => {
-    console.log('Se guarda el lenguaje por defecto')
     setCookie({ name: CURRENT_LANG, value: lang })
     setLocalStorageFromKey({ key: CURRENT_LANG, value: lang })
   }
@@ -80,6 +82,10 @@ export const GeneralContextProvider = ({
     setCurrentLang(lang)
   }
 
+  const toggleBannerStatus = () => {
+    setBannerStatus(false)
+  }
+
   return (
     <GeneralContext.Provider
       value={{
@@ -89,6 +95,8 @@ export const GeneralContextProvider = ({
           geoip,
         },
         setLang,
+        bannerAnimated,
+        toggleBannerStatus,
       }}
     >
       {children}

@@ -85,3 +85,13 @@ export const getMany = (object: object | undefined, keyPaths: string[]) => {
 
   return gotten
 }
+
+export const pascalCaseToSnakeCase = (iconName: string | undefined) => {
+  if (!iconName || typeof iconName !== 'string') {
+    return iconName
+  }
+
+  return iconName
+    .replace(/([a-z])([A-Z])/g, '$1_$2') // Inserta guión bajo entre minúscula y mayúscula
+    .toLowerCase() // Convierte todo a minúsculas
+}

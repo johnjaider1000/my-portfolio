@@ -8,6 +8,7 @@ const EN_LANG = {
   },
   HOME: {
     WELCOME: 'Welcome to',
+    ALL_RIGHT_RESERVED: 'All right reserved.',
   },
 }
 

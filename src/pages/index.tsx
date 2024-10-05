@@ -1,7 +1,7 @@
-import HomeView from '@/modules/examples/components/views/Home'
+import HomeViewComponent from '@/modules/portfolio/components/views/Home'
 
 const HomePage = () => {
-  return <HomeView />
+  return <HomeViewComponent />
 }
 
 export default HomePage

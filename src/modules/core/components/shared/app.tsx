@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import CssBaseline from '@mui/material/CssBaseline'
 import { GeneralContextProvider } from '@/core/store/context/GeneralContext'
+import { ThemeContextProvider } from '@/core/store/context/ThemeContext'
 // import { AuthContextProvider } from '@/store/context/AuthContext'
 // import { MenuContextProvider } from '@/store/context/admin/menu/MenuContext'
 import { ContextProps } from '@/core/interfaces/context'
@@ -28,13 +29,15 @@ const AppComponent = ({ pageProps, Component }: Props) => {
 
 const AppState = ({ pageProps, children }: ContextProps) => {
   return (
-    <GeneralContextProvider pageProps={pageProps}>
-      {/* <AuthContextProvider pageProps={pageProps}>
+    <ThemeContextProvider>
+      <GeneralContextProvider pageProps={pageProps}>
+        {/* <AuthContextProvider pageProps={pageProps}>
         <MenuContextProvider pageProps={pageProps}> */}
-      {children}
-      {/* </MenuContextProvider>
+        {children}
+        {/* </MenuContextProvider>
       </AuthContextProvider> */}
-    </GeneralContextProvider>
+      </GeneralContextProvider>
+    </ThemeContextProvider>
   )
 }
 

@@ -8,6 +8,7 @@ const ES_LANG = {
   },
   HOME: {
     WELCOME: 'Bienvenido a',
+    ALL_RIGHT_RESERVED: 'Todos los derechos reservados',
   },
 }
 

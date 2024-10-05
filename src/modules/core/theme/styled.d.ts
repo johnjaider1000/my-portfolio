@@ -13,7 +13,7 @@ declare module '@mui/material/styles' {
     custonButtonColor: SimplePaletteColorOptions
     blue?: SimplePaletteColorOptions
     white?: SimplePaletteColorOptions
-    night?: SimplePaletteColorOptions
+    night: SimplePaletteColorOptions
   }
 
   interface PaletteOptions {
@@ -21,7 +21,7 @@ declare module '@mui/material/styles' {
     custonButtonColor?: SimplePaletteColorOptions
     blue?: SimplePaletteColorOptions
     white?: SimplePaletteColorOptions
-    night?: SimplePaletteColorOptions
+    night: SimplePaletteColorOptions
   }
 
   export function createTheme(options?: ThemeOptions, ...args: object[]): Theme

@@ -8,7 +8,7 @@ const themeOptionsLight: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#8338EC',
+      main: '#ffffff',
     },
     secondary: {
       main: '#6405EB',
@@ -22,8 +22,8 @@ const themeOptionsLight: ThemeOptions = {
       contrastText: '#FFFFFF',
     },
     night: {
-      main: '#ffffff',
-      contrastText: '#090A0D',
+      main: '#141313',
+      contrastText: '#ffffff',
     },
   },
   components: {
