@@ -20,6 +20,10 @@ export const LeftLayout = styled('div')`
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 900px) {
+    display: none;
+  }
+
   .container {
     display: flex;
     flex-direction: column;

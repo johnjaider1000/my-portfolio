@@ -42,6 +42,10 @@ export const AboutArticleWrapper = styled('div')`
     align-items: stretch;
     gap: 40px;
 
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+
     .summary-container {
       width: 40%;
       display: flex;
@@ -49,8 +53,16 @@ export const AboutArticleWrapper = styled('div')`
       align-items: center;
       gap: 8px;
 
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+
       .about-image {
         width: 100%;
+        @media (max-width: 900px) {
+          width: unset;
+        }
+        aspect-ratio: 1;
         border-radius: 50%;
       }
 
@@ -87,10 +99,18 @@ export const AboutArticleWrapper = styled('div')`
     .info-container {
       width: 60%;
 
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+
       .data-profile {
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: 900px) {
+          padding-top: 2rem;
+        }
 
         .title-number {
           display: flex;

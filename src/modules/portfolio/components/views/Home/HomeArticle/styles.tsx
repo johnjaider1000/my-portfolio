@@ -14,6 +14,10 @@ export const HomeArticleWrapper = styled('article')`
     gap: 10px;
     align-items: center;
 
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+
     .col {
       width: 100%;
       gap: 10px;
@@ -22,6 +26,10 @@ export const HomeArticleWrapper = styled('article')`
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        @media (max-width: 900px) {
+          padding: 2rem 1rem;
+        }
 
         .title-container {
           position: relative;
@@ -58,6 +66,14 @@ export const HomeArticleWrapper = styled('article')`
       }
 
       &.profile-image-container {
+        @media (max-width: 1150px) {
+          display: none;
+        }
+
+        @media (max-width: 900px) {
+          display: none;
+        }
+
         .profile-image {
           width: 100%;
           height: auto;

@@ -15,11 +15,18 @@ export const ContactArticleWrapper = styled('div')`
   .contact-container {
     display: flex;
 
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     .info-container {
       width: 50%;
     }
 
     .form-container {
+      padding-bottom: 3rem;
+
       .form-content {
         background: rgb(255, 177, 71);
         background: linear-gradient(

@@ -14,5 +14,9 @@ export const WorksArticleWrapper = styled('article')`
     display: grid;
     gap: 4rem;
     grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `

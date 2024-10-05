@@ -6,14 +6,16 @@ export const ProjectItemWrapper = styled('div')`
   transition: all 0.1s ease-in;
   padding: 10px;
 
-  &:hover {
-    -webkit-box-shadow: 0px 0px 19px -10px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 19px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 19px -10px rgba(0, 0, 0, 0.75);
-    border-radius: 8px;
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: all 0.1s ease-in;
+  @media (min-width: 900px) {
+    &:hover {
+      -webkit-box-shadow: 0px 0px 19px -10px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 19px -10px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 19px -10px rgba(0, 0, 0, 0.75);
+      border-radius: 8px;
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: all 0.1s ease-in;
+    }
   }
 
   .titles {
