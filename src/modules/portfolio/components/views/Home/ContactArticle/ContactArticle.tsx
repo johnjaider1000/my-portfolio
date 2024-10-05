@@ -14,7 +14,7 @@ const ContactArticle = () => {
   const [loading, setLoading] = useState<boolean>(false)
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault() // Prevenir la recarga de la página
+    e.preventDefault()
     const elements = e.target.querySelectorAll('input, textarea')
     const data: any = {}
     console.log(elements)
