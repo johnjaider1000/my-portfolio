@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
-import axiosInstance from '@/config/axios'
 import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
+import axiosInstance from '../../config/axios'
 
 interface UseLazyQueryState<T> {
   loading: boolean

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { CallbackType } from '../Types/types'
-import { ChildrenCallbackAttach } from '@/interfaces/general'
+import { ChildrenCallbackAttach } from '@/modules/core/interfaces/general'
 
 interface Props {
   actived?: boolean

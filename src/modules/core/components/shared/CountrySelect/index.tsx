@@ -3,7 +3,8 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
 import { CountryType, countries, getOrderedCountries } from './countriesList'
-import { countryToFlag } from '@/utils'
+import { countryToFlag } from '@/modules/core/utils'
+
 
 interface Props {
   label?: string

@@ -3,14 +3,14 @@ import Box from '@mui/material/Box'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import useWords from '@/hooks/useWords'
 import Link from 'next/link'
 import classnames from 'classnames'
 import { get as getProp } from 'object-path'
-import { GeneralContext } from '@/store/context/GeneralContext'
 import { useRouter } from 'next/router'
 import { MenuItem } from './styles'
 import { langs } from './list'
+import useWords from '@/modules/core/hooks/useWords'
+import { GeneralContext } from '@/modules/core/store/context/GeneralContext'
 
 interface Props {
   className?: string

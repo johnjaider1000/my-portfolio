@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
-import { ObjectUtils } from '@/utils'
 import objectPath from 'object-path'
+import { ObjectUtils } from '../utils'
 
 // Ejemplo de esquema Yup
 const schema = Yup.object().shape({

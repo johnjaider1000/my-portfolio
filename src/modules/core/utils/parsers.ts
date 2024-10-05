@@ -1,6 +1,6 @@
+import { AuthUserProps } from '@/modules/auth/interfaces/context'
 import jwt from 'jsonwebtoken'
-import { AuthUserProps } from '@/interfaces/context'
-import { getProp } from '@/utils'
+import { getProp } from '.'
 
 export const decodeUser = (
   authToken: string = ''

@@ -1,9 +1,9 @@
 import React from 'react'
 import { FixedControlsWrapper } from './styles'
-import ButtonComponent, { variantOptions } from '../Button'
+import ButtonComponent from '../Button'
 import classNames from 'classnames'
 import { CircularProgress } from '@mui/material'
-import { Action } from '@/interfaces/general'
+import { Action } from '@/modules/core/interfaces/general'
 
 interface FixedControlsProps {
   title?: string | React.ReactElement | React.ReactElement[]
@@ -27,7 +27,7 @@ const FixedControls: React.FC<FixedControlsProps> = ({
           {actions?.map((item, index) => (
             <ButtonComponent
               key={index}
-              color={item.color || 'black'}
+              color={item.color as any}
               variant={item.variant || 'contained'}
               disabled={item.disabled || item.loading}
               onClick={item.onClick}
