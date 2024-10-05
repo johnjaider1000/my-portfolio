@@ -32,8 +32,8 @@ const AboutArticle = () => {
               <b>Desarrollador FullStack</b> en Bogotá D.C, Colombia
             </h3>
 
-            <a href='#' target='_blank' className='link-cv-download'>
-              Download CV
+            <a href='/static/cv-john-vanegas.pdf' target='_blank' className='link-cv-download'>
+              Descargar mi CV
               <span className='icon-container'>
                 <ArrowOutwardIcon className='icon' />
               </span>

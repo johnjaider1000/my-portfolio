@@ -21,7 +21,9 @@ const ExperienceArticleComponent = () => {
                 de herramientas y lenguajes de programación.
               </p>
 
-              <ActionButton label='Descarga mi CV' className='mt-3' />
+              <a href='/static/cv-john-vanegas.pdf' target='_blank'>
+                <ActionButton label='Descarga mi CV' className='mt-3' />
+              </a>
             </div>
           </div>
 
