@@ -7,6 +7,7 @@ import { ContactInfo, HomeArticleWrapper } from './styles'
 import MoonImage from '@/core/assets/vector-1.svg'
 import ProfileImage from '@/modules/portfolio/assets/me.png'
 import ActionButton from '../../../common/ActionButton'
+import { WHATSAPP_LINK } from '@/modules/portfolio/constants/urls'
 
 const HomeArticle = () => {
   return (
@@ -70,7 +71,9 @@ const HomeArticle = () => {
               digital, sigue bajando para saber más. ¡La innovación nos espera!
             </p>
 
-            <ActionButton label='Hablemos' />
+            <a href={WHATSAPP_LINK} target='_blank'>
+              <ActionButton label='Hablemos' />
+            </a>
 
             <ContactInfo className='contact-info'>
               <div className='contact-item'>
