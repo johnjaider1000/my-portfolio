@@ -31,10 +31,10 @@ export const AboutArticleWrapper = styled('div')`
     .title {
       text-transform: uppercase;
     }
+  }
 
-    .subtitle {
-      font-weight: 300;
-    }
+  .subtitle {
+    font-weight: 300;
   }
 
   .about-container {

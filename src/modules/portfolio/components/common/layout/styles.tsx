@@ -71,9 +71,13 @@ export const LiItem = styled('li')`
   }
 `
 
+export const RssContainer = styled('div')`
+  margin-top: auto;
+  margin-left: 30px;
+`
+
 export const LeftFooter = styled('div')`
   padding: 30px;
   color: ${({ theme }) => theme.palette.night?.contrastText};
   font-size: 0.8em;
-  margin-top: auto;
 `

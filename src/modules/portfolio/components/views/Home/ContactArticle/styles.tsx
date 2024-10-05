@@ -4,6 +4,8 @@ export const ContactArticleWrapper = styled('div')`
   min-height: 100vh;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  display: flex;
+  align-items: center;
 
   .header-titles {
     height: 100px;

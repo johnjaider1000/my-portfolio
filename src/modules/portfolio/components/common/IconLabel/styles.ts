@@ -1,6 +1,6 @@
-import { styled } from '@mui/material'
+import { Box, styled } from '@mui/material'
 
-export const IconLabelWrapper = styled('div')`
+export const IconLabelWrapper = styled(Box)`
   display: flex;
   flex-direction: row;
   align-items: center;

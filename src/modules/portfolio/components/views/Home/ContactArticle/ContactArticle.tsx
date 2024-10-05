@@ -1,4 +1,4 @@
-import { Container, Grid, TextField } from '@mui/material'
+import { Box, Container, Grid, TextField } from '@mui/material'
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined'
 import AttachEmailOutlinedIcon from '@mui/icons-material/AttachEmailOutlined'
 import LinkedinImage from '@/modules/portfolio/assets/linkedin.webp'
@@ -7,6 +7,7 @@ import TitleHead from '../../../common/TitleHead'
 import { ContactArticleWrapper } from './styles'
 import ActionButton from '../../../common/ActionButton'
 import IconLabel from '../../../common/IconLabel'
+import Image from 'next/image'
 
 const ContactArticle = () => {
   return (
@@ -24,13 +25,31 @@ const ContactArticle = () => {
 
             <div className='contact-list-items flex column gap-2 mt-3'>
               <IconLabel
+                href='tel:+573108783015'
                 icon={<LocalPhoneOutlinedIcon />}
                 label='+57 310-878-3015'
               />
 
               <IconLabel
+                href='mailto:contacto@starlly.com'
                 icon={<AttachEmailOutlinedIcon />}
                 label='contacto@starlly.com'
+              />
+
+              <IconLabel
+                href='https://www.linkedin.com/in/johnjaider1000/'
+                icon={
+                  <Image
+                    src={LinkedinImage}
+                    alt='IconLinkedin'
+                    style={{
+                      width: '28px',
+                      height: '28px',
+                      borderRadius: '50%',
+                    }}
+                  />
+                }
+                label='Linkedin'
               />
             </div>
           </div>

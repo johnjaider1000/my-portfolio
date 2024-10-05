@@ -1,5 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
+import { Link } from 'react-scroll'
+
+import useWords from '@/modules/core/hooks/useWords'
+import IconLabel from '../IconLabel'
+import LinkedinImage from '@/modules/portfolio/assets/linkedin.webp'
+
 import {
   LayoutComponentWrapper,
   LayoutContainer,
@@ -8,10 +15,9 @@ import {
   LiItem,
   LinksListContent,
   RightLayout,
+  RssContainer,
   TitleH1,
 } from './styles'
-import useWords from '@/modules/core/hooks/useWords'
-import { Link } from 'react-scroll'
 
 interface Props {
   title?: string
@@ -101,6 +107,23 @@ const LayoutComponent: React.FC<Props> = ({
               </Link>
             </LiItem>
           </LinksListContent>
+
+          <RssContainer>
+            <IconLabel
+              href='https://www.linkedin.com/in/johnjaider1000/'
+              icon={
+                <Image
+                  src={LinkedinImage}
+                  alt='IconLinkedin'
+                  style={{
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '50%',
+                  }}
+                />
+              }
+            />
+          </RssContainer>
 
           <LeftFooter>
             <p>Copyright ©2024 John Vanegas. {ALL_RIGHT_RESERVED}.</p>
