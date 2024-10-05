@@ -67,7 +67,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                ABOUT
+                Acerca de
               </Link>
             </LiItem>
 
@@ -79,7 +79,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                Projects
+                Proyectos
               </Link>
             </LiItem>
 
@@ -103,7 +103,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                CONTACT
+                CONTACTO
               </Link>
             </LiItem>
           </LinksListContent>
