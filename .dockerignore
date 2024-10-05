@@ -1,0 +1,7 @@
+.gitignore
+.eslintrc.json
+.nvmrc
+*.md
+*.yaml
+.next
+node_modules
