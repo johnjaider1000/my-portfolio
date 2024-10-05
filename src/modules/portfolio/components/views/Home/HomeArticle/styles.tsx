@@ -122,6 +122,11 @@ export const ContactInfo = styled('div')`
   gap: 8px;
   justify-content: space-between;
 
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .contact-item {
     display: flex;
     align-items: center;
