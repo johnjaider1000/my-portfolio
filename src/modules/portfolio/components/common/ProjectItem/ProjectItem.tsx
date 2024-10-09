@@ -57,6 +57,8 @@ const ProjectItemComponent: React.FC<Props> = ({ item }) => {
                 src={item.image}
                 alt={`${item.title} Thumbnail`}
                 className='thumnail-image'
+                width={380}
+                height={380}
               />
             </figure>
           </div>
