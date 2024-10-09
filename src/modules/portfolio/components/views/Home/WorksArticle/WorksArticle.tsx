@@ -10,6 +10,7 @@ import ReparaFicherosJJThumbnail from '@/modules/portfolio/assets/reparaficheros
 import { IProjectItem } from '../../../common/ProjectItem'
 import KoraThumnail from '@/modules/portfolio/assets/kora.png'
 import ProjectItemComponent from '../../../common/ProjectItem/ProjectItem'
+import useWords from '@/modules/core/hooks/useWords'
 
 const works: Array<IProjectItem> = [
   {
@@ -108,12 +109,16 @@ const works: Array<IProjectItem> = [
 ]
 
 const WorksArticle = () => {
+  const {
+    WORKS: { PRE_TITLE, TITLE },
+  } = useWords()
+
   return (
     <WorksArticleWrapper>
       <Container>
         <TitleHead
-          beforeTitle='Proyectos'
-          title='Proyectos recientes'
+          beforeTitle={PRE_TITLE}
+          title={TITLE}
           className='head-titles'
         />
 

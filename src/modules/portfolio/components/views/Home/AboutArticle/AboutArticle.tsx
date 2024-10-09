@@ -11,16 +11,34 @@ import AboutImage from '@/modules/portfolio/assets/hello.png'
 import IconLabel from '../../../common/IconLabel'
 import ExperienceArticleComponent from './ExperienceArticle'
 import TitleHead from '../../../common/TitleHead'
+import useWords from '@/modules/core/hooks/useWords'
 
 const AboutArticle = () => {
+  const {
+    lang,
+    HOME: { FULL_STACK_DEVELOPER },
+    ABOUT: {
+      NICE_TO_MEET_YOU,
+      WELCOME,
+      DOWNLOAD_MY_RESUME,
+      YEARS_OF_EXPERIENCE,
+      P1,
+      P2,
+      P3,
+      TECHNOLOGIES,
+      MAIN,
+      OTHERS,
+      YEARS,
+    },
+  } = useWords()
   return (
     <AboutArticleWrapper>
       <Container>
         <div className='about-container'>
           <div className='summary-container'>
             <TitleHead
-              beforeTitle='Gusto en conocerte!'
-              title='Bienvenido...'
+              beforeTitle={NICE_TO_MEET_YOU}
+              title={WELCOME}
               className='head-titles'
             />
 
@@ -29,11 +47,15 @@ const AboutArticle = () => {
             <GradientTitle className='profile-name'>JOHN VANEGAS</GradientTitle>
 
             <h3 className='subtitle'>
-              <b>Desarrollador FullStack</b> en Bogotá D.C, Colombia
+              <b>{FULL_STACK_DEVELOPER}</b> - Bogotá D.C, Colombia
             </h3>
 
-            <a href='/static/cv-john-vanegas.pdf' target='_blank' className='link-cv-download'>
-              Descargar mi CV
+            <a
+              href={`/static/cv-john-vanegas${lang ? '-' + lang : '-en'}.pdf`}
+              target='_blank'
+              className='link-cv-download cursor-pointer'
+            >
+              {DOWNLOAD_MY_RESUME}
               <span className='icon-container'>
                 <ArrowOutwardIcon className='icon' />
               </span>
@@ -47,7 +69,7 @@ const AboutArticle = () => {
                 label='+57 310-878-3015'
               />
 
-              <IconLabel icon={<BadgeOutlinedIcon />} label='29 años' />
+              <IconLabel icon={<BadgeOutlinedIcon />} label={`29 ${YEARS}`} />
 
               <IconLabel
                 icon={<AttachEmailOutlinedIcon />}
@@ -66,41 +88,27 @@ const AboutArticle = () => {
               <div className='col'>
                 <div className='title-number'>
                   <GradientTitle className='number'>9+</GradientTitle>
-                  <span className='text'>Años de experiencia...</span>
+                  <span className='text'>{YEARS_OF_EXPERIENCE}</span>
                 </div>
 
-                <p className='description'>
-                  Hola, soy John Vanegas, un desarrollador Full Stack impulsado
-                  por la curiosidad y una profunda pasión por la innovación. Mi
-                  misión es crear soluciones que no solo sean funcionales, sino
-                  que también sean intuitivas y transformadoras, capaces de
-                  cambiar el mundo.
-                </p>
+                <p className='description'>{P1}</p>
 
-                <p className='description'>
-                  Javascript es mi lenguaje favorito, y he profundizado en una
-                  variedad de tecnologías que lo emplean.
-                </p>
+                <p className='description'>{P2}</p>
 
-                <p className='description'>
-                  Actualmente, me estoy especializando en el fascinante campo de
-                  la Inteligencia Artificial con Python. En este portafolio,
-                  encontrarás una selección de proyectos y laboratorios que he
-                  desarrollado utilizando estas tecnologías.
-                </p>
+                <p className='description'>{P3}</p>
               </div>
 
               <div className='col'>
                 <div className='title-number'>
                   <GradientTitle className='number'>14+</GradientTitle>
-                  <span className='text'>Tecnologías...</span>
+                  <span className='text'>{TECHNOLOGIES}</span>
                 </div>
 
                 <h5
                   className='flex row v-center mt-1 mb-1'
                   style={{ opacity: 0.6 }}
                 >
-                  Principales
+                  {MAIN}
                 </h5>
 
                 <div className='tecnologies-list'>
@@ -124,7 +132,7 @@ const AboutArticle = () => {
                   className='flex row v-center mt-2 mb-1'
                   style={{ opacity: 0.6 }}
                 >
-                  Otras
+                  {OTHERS}
                 </h5>
 
                 <div className='tecnologies-list'>

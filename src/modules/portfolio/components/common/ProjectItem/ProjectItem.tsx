@@ -4,6 +4,7 @@ import TitleHead from '../TitleHead'
 import Link from 'next/link'
 import ActionButton from '../ActionButton'
 import Image from 'next/image'
+import useWords from '@/modules/core/hooks/useWords'
 
 export interface IProjectItem {
   work: string
@@ -18,6 +19,10 @@ interface Props {
 }
 
 const ProjectItemComponent: React.FC<Props> = ({ item }) => {
+  const {
+    WORKS: { AVAILABLE_SOON },
+  } = useWords()
+
   return (
     <Box component={item?.link ? Link : 'div'} href={item.link} target='_blank'>
       <ProjectItemWrapper>
@@ -38,7 +43,7 @@ const ProjectItemComponent: React.FC<Props> = ({ item }) => {
           {!item.link && (
             <Chip
               color='info'
-              label='Pronto disponible'
+              label={AVAILABLE_SOON}
               className='mt-2'
               size='small'
             />

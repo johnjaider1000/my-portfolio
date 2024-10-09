@@ -1,8 +1,8 @@
 import useTranslator from './useTranslator'
 
 const useWords = () => {
-  const { LANG } = useTranslator()
-  return { ...LANG }
+  const { LANG, lang } = useTranslator()
+  return { ...LANG, lang }
 }
 
 export default useWords

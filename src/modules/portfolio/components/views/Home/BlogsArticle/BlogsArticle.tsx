@@ -4,24 +4,22 @@ import { BlogsArticleWrapper } from './styles'
 import ProjectItemComponent from '../../../common/ProjectItem/ProjectItem'
 import YouTubeImage from '@/modules/portfolio/assets/youtube.png'
 import ScratchImage from '@/modules/portfolio/assets/scratch-coding.jpg'
+import useWords from '@/modules/core/hooks/useWords'
 
 const BlogsArticle = () => {
+  const {
+    BLOGS: { TITLE, DESCRIPTION },
+  } = useWords()
   return (
     <BlogsArticleWrapper>
       <Container>
         <TitleHead
           beforeTitle='Blogs & Vlogs'
-          title='Mis Blogs & Vlogs'
+          title={TITLE}
           className='header-titles'
         />
 
-        <p>
-          Disfruto compartiendo conocimiento. Aunque mi tiempo es limitado,
-          cuando la inspiración llega, me encanta enseñar cómo mejorar la
-          programación y compartir tips en mis redes sociales. Actualmente,
-          gestiono un canal en YouTube donde comparto herramientas útiles como
-          Repara ficheros JJ, junto con otros conocimientos.
-        </p>
+        <p>{DESCRIPTION}</p>
 
         <div className='grid-projects'>
           <ProjectItemComponent

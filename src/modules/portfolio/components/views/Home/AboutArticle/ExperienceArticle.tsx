@@ -3,26 +3,41 @@ import { ExperienceArticle } from './styles'
 import ActionButton from '../../../common/ActionButton'
 import MoreDescription from './MoreDescription'
 import TitleHead from '../../../common/TitleHead'
+import useWords from '@/modules/core/hooks/useWords'
 
 const ExperienceArticleComponent = () => {
+  const {
+    lang,
+    HOME: { FULL_STACK_DEVELOPER },
+    ABOUT: { DOWNLOAD_MY_RESUME },
+    EXPERIENCE: {
+      EXPERIENCE,
+      MY_EXPERIENCE,
+      DESCRIPTION,
+      FRONT_END_DEVELOPER,
+      EXP_P1,
+      EXP_P2,
+      EXP_P3,
+      EXP_P4,
+      EXP_P5,
+    },
+  } = useWords()
+
   return (
     <ExperienceArticle>
       <Container>
         <div className='about-container'>
           <div className='summary-container'>
             <div className='head-titles'>
-              <TitleHead beforeTitle='Experiencia' title='Mi experiencia' />
+              <TitleHead beforeTitle={EXPERIENCE} title={MY_EXPERIENCE} />
 
-              <p className='description mt-1'>
-                He tenido el privilegio de colaborar con diversas empresas, lo
-                que me ha brindado la oportunidad de explorar una variedad de
-                tecnologías. Esta experiencia me ha permitido desarrollar
-                habilidades como Full Stack, dándome acceso a un amplio espectro
-                de herramientas y lenguajes de programación.
-              </p>
+              <p className='description mt-1'>{DESCRIPTION}</p>
 
-              <a href='/static/cv-john-vanegas.pdf' target='_blank'>
-                <ActionButton label='Descarga mi CV' className='mt-3' />
+              <a
+                href={`/static/cv-john-vanegas${lang ? '-' + lang : '-en'}.pdf`}
+                target='_blank'
+              >
+                <ActionButton label={DOWNLOAD_MY_RESUME} className='mt-3 cursor-pointer' />
               </a>
             </div>
           </div>
@@ -46,7 +61,7 @@ const ExperienceArticleComponent = () => {
                   </small>
                 </h3>
 
-                <h2 className='title'>Desarrollador Full Stack</h2>
+                <h2 className='title'>{FULL_STACK_DEVELOPER}</h2>
 
                 <div className='technologies'>
                   <Chip size='small' label='React.js' className='tech' />
@@ -57,14 +72,7 @@ const ExperienceArticleComponent = () => {
                   <Chip size='small' label='Wordpress' className='tech' />
                 </div>
 
-                <MoreDescription>
-                  Contribuí como desarrollador Front-End en la aplicación de
-                  gestión de pagos de la plataforma Veem utilizando React.js y
-                  TypeScript. Además, colaboré con el equipo de diseño web en
-                  proyectos basados en PHP y WordPress, donde desarrollé nuevos
-                  widgets, plugins personalizados e implementaciones que
-                  integraban y extendían las funcionalidades de WordPress.
-                </MoreDescription>
+                <MoreDescription>{EXP_P1}</MoreDescription>
               </div>
 
               <div className='history-item'>
@@ -83,7 +91,7 @@ const ExperienceArticleComponent = () => {
                   </small>
                 </h3>
 
-                <h2 className='title'>Desarrollador Full Stack</h2>
+                <h2 className='title'>{FULL_STACK_DEVELOPER}</h2>
 
                 <div className='technologies'>
                   <Chip size='small' label='Android' className='tech' />
@@ -94,19 +102,7 @@ const ExperienceArticleComponent = () => {
                   <Chip size='small' label='MiFare' className='tech' />
                 </div>
 
-                <MoreDescription>
-                  Como Full Stack Developer (usando React, Vue, Java y Android),
-                  puse en práctica todas mis habilidades y adquirí nuevos
-                  conocimientos. Contribuí al desarrollo del dashboard de la
-                  compañía y lideré el desarrollo de una aplicación Android para
-                  dispositivos electrónicos con lectores MiFare e impresoras.
-                  Implementé de manera integral la funcionalidad de lectura y
-                  escritura de tarjetas, así como la impresión de recibos a
-                  través del hardware de los dispositivos, lo que me permitió
-                  profundizar en la programación de bajo nivel, trabajando con
-                  hexadecimales y binarios para interactuar con los lectores
-                  MiFare.
-                </MoreDescription>
+                <MoreDescription>{EXP_P2}</MoreDescription>
               </div>
 
               <div className='history-item'>
@@ -126,7 +122,7 @@ const ExperienceArticleComponent = () => {
                   </small>
                 </h3>
 
-                <h2 className='title'>Desarrollador Front-End</h2>
+                <h2 className='title'>{FRONT_END_DEVELOPER}</h2>
 
                 <div className='technologies'>
                   <Chip size='small' label='React.js' className='tech' />
@@ -138,13 +134,7 @@ const ExperienceArticleComponent = () => {
                   <Chip size='small' label='GraphQL' className='tech' />
                 </div>
 
-                <MoreDescription>
-                  Colaboré en el desarrollo completo del frontend de la
-                  aplicación, utilizando tecnologías como React.js, Redux.js,
-                  Next.js, HTML5, CSS3, SASS, GraphQL y Material UI para crear
-                  una interfaz de usuario moderna, eficiente y altamente
-                  interactiva.
-                </MoreDescription>
+                <MoreDescription>{EXP_P3}</MoreDescription>
               </div>
               <div className='history-item'>
                 <h3 className='history-title'>
@@ -163,7 +153,7 @@ const ExperienceArticleComponent = () => {
                   </small>
                 </h3>
 
-                <h2 className='title'>Desarrollador Full Stack</h2>
+                <h2 className='title'>{FULL_STACK_DEVELOPER}</h2>
 
                 <div className='technologies'>
                   <Chip size='small' label='Node.js' className='tech' />
@@ -176,14 +166,7 @@ const ExperienceArticleComponent = () => {
                   <Chip size='small' label='Android' className='tech' />
                 </div>
 
-                <MoreDescription>
-                  Colaboré en el desarrollo integral de la aplicación, desde su
-                  fase inicial hasta su implementación final. Desarrollé la
-                  página web, el dashboard web, la aplicación móvil, y el
-                  Kiosko, una plataforma que permitía a los usuarios obtener
-                  dinero a cambio de reciclar botellas. Utilicé tecnologías como
-                  React.js, Node.js, Electron.js, PHP y Android.
-                </MoreDescription>
+                <MoreDescription>{EXP_P4}</MoreDescription>
               </div>
               <div className='history-item'>
                 <h3 className='history-title'>
@@ -202,7 +185,7 @@ const ExperienceArticleComponent = () => {
                   </small>
                 </h3>
 
-                <h2 className='title'>Desarrollador Full Stack</h2>
+                <h2 className='title'>{FULL_STACK_DEVELOPER}</h2>
 
                 <div className='technologies'>
                   <Chip size='small' label='HTML5' className='tech' />
@@ -216,15 +199,7 @@ const ExperienceArticleComponent = () => {
                   <Chip size='small' label='Php' className='tech' />
                 </div>
 
-                <MoreDescription>
-                  AppFuture fue mi primera experiencia en el ámbito laboral, un
-                  lugar donde tuve la oportunidad de conocer personas increíbles
-                  que me enseñaron los fundamentos y muchos de los principios
-                  clave de la programación. Allí trabajé con diversas
-                  tecnologías y di mis primeros pasos como Full Stack Developer,
-                  utilizando herramientas como Java, Spring Boot, SQL, MySQL,
-                  Postgres, PHP, HTML, CSS, JQuery, JavaScript puro y Android.
-                </MoreDescription>
+                <MoreDescription>{EXP_P5}</MoreDescription>
               </div>
             </div>
           </div>

@@ -8,6 +8,8 @@ import {
 } from '@/modules/core/utils/localStorage'
 import { ContextProps } from '@/modules/core/interfaces/context'
 import { setCookie } from '@/modules/core/utils/cookie'
+import LangSelector from '@/modules/examples/components/shared/LangSelector'
+import { styled } from '@mui/material'
 
 export interface GeoIP {
   ip: string
@@ -99,7 +101,20 @@ export const GeneralContextProvider = ({
         toggleBannerStatus,
       }}
     >
+      <LangContainer>
+        <LangSelector className='lang-selector' />
+      </LangContainer>
+
       {children}
     </GeneralContext.Provider>
   )
 }
+
+const LangContainer = styled('div')`
+  .lang-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9;
+  }
+`

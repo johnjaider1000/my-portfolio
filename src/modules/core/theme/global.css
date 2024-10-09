@@ -40,6 +40,14 @@ a {
   text-overflow: ellipsis;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-pointer * {
+  cursor: pointer;
+}
+
 .text-left {
   text-align: left !important;
 }

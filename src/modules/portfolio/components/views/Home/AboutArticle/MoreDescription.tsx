@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined'
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined'
+import useWords from '@/modules/core/hooks/useWords'
 
 interface Props {
   children: React.ReactElement | React.ReactElement[] | string
 }
 const MoreDescription: React.FC<Props> = ({ children }) => {
   const [showMore, setShowMore] = useState<boolean>(false)
+  const {
+    EXPERIENCE: { SEE, MORE, LESS },
+  } = useWords()
 
   const toggleShowMore = () => {
     setShowMore((flag) => !flag)
@@ -26,7 +30,7 @@ const MoreDescription: React.FC<Props> = ({ children }) => {
           className='flex row v-center'
         >
           {showMore ? <ExpandLessOutlinedIcon /> : <ExpandMoreOutlinedIcon />}{' '}
-          Ver {showMore ? 'menos' : 'más'}...
+          {SEE} {showMore ? LESS : MORE}...
         </a>
       </p>
     </>

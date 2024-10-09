@@ -9,9 +9,13 @@ import ActionButton from '../../../common/ActionButton'
 import IconLabel from '../../../common/IconLabel'
 import Image from 'next/image'
 import { useState } from 'react'
+import useWords from '@/modules/core/hooks/useWords'
 
 const ContactArticle = () => {
   const [loading, setLoading] = useState<boolean>(false)
+  const {
+    CONTACT: { PRE_TITLE, TITLE, FORM_TITLE, NAME, EMAIL, MESSAGE, SEND },
+  } = useWords()
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
@@ -50,12 +54,12 @@ const ContactArticle = () => {
         <div className='contact-container'>
           <div className='info-container'>
             <TitleHead
-              beforeTitle='Contacto'
-              title='Contáctame'
+              beforeTitle={PRE_TITLE}
+              title={TITLE}
               className='header-titles'
             />
 
-            <p className='description'>Ubicado en Bogotá D.C, Colombia</p>
+            <p className='description'>Bogotá D.C, Colombia</p>
 
             <div className='contact-list-items flex column gap-2 mt-3'>
               <IconLabel
@@ -96,13 +100,13 @@ const ContactArticle = () => {
               >
                 <Grid container spacing={4}>
                   <Grid item md={12}>
-                    <h1 className='title'>Algún proyecto en mente?</h1>
+                    <h1 className='title'>{FORM_TITLE}</h1>
                   </Grid>
 
                   <Grid item xs={12} md={6}>
                     <TextField
                       name='name'
-                      label='Nombres'
+                      label={NAME}
                       variant='standard'
                       fullWidth
                       required
@@ -113,7 +117,7 @@ const ContactArticle = () => {
                     <TextField
                       name='email'
                       type='email'
-                      label='Correo electrónico'
+                      label={EMAIL}
                       variant='standard'
                       fullWidth
                       required
@@ -124,7 +128,7 @@ const ContactArticle = () => {
                     <TextField
                       name='message'
                       required
-                      label='Mensaje'
+                      label={MESSAGE}
                       variant='standard'
                       rows={3}
                       multiline
@@ -135,7 +139,7 @@ const ContactArticle = () => {
                   <Grid item xs={12} md={12}>
                     <ActionButton
                       type='submit'
-                      label='Enviar ahora'
+                      label={SEND}
                       loading={loading}
                     />
                   </Grid>

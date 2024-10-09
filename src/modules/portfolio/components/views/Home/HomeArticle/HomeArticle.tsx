@@ -8,8 +8,19 @@ import MoonImage from '@/core/assets/vector-1.svg'
 import ProfileImage from '@/modules/portfolio/assets/me.png'
 import ActionButton from '../../../common/ActionButton'
 import { WHATSAPP_LINK } from '@/modules/portfolio/constants/urls'
+import useWords from '@/modules/core/hooks/useWords'
 
 const HomeArticle = () => {
+  const {
+    HOME: {
+      MY_NAME,
+      IS,
+      FULL_STACK_DEVELOPER,
+      SPECIALIZED_IN,
+      INIT_DESCRIPTION,
+      LETS_TALK,
+    },
+  } = useWords()
   return (
     <HomeArticleWrapper>
       <Container>
@@ -23,9 +34,9 @@ const HomeArticle = () => {
               />
 
               <h1 className='title'>
-                <span className='name'>Mi nombre</span>
+                <span className='name'>{MY_NAME}</span>
                 <span className='introduction'>
-                  es <strong className='first-name'>JOHN</strong>
+                  {IS} <strong className='first-name'>JOHN</strong>
                 </span>
                 <span className='last-name'>
                   <strong>Vanegas...</strong>
@@ -36,9 +47,9 @@ const HomeArticle = () => {
             <h2 className='subtitle'>
               <span className='info'>
                 <b>
-                  <i>Desarrollador FullStack</i>
+                  <i>{FULL_STACK_DEVELOPER}</i>
                 </b>{' '}
-                especializado en
+                {SPECIALIZED_IN}
               </span>
 
               <span className='technologies-experience'>
@@ -61,18 +72,10 @@ const HomeArticle = () => {
               </span>
             </h2>
 
-            <p className='description'>
-              Soy un desarrollador apasionado y curioso, siempre en la búsqueda
-              de lo extraordinario. Mis herramientas preferidas son JavaScript y
-              TypeScript, pero mi curiosidad me ha llevado a explorar un vasto
-              universo tecnológico. Creo firmemente que al romper las barreras
-              de lo habitual, podemos crear cosas verdaderamente increíbles. Si
-              deseas descubrir cómo juntos podemos revolucionar el mundo
-              digital, sigue bajando para saber más. ¡La innovación nos espera!
-            </p>
+            <p className='description'>{INIT_DESCRIPTION}</p>
 
             <a href={WHATSAPP_LINK} target='_blank'>
-              <ActionButton label='Hablemos' />
+              <ActionButton label={LETS_TALK} />
             </a>
 
             <ContactInfo className='contact-info'>
