@@ -6,6 +6,13 @@ const ES_LANG = {
       en: 'Inglés',
     },
   },
+  LEFT_PANEL: {
+    HOME: 'Inicio',
+    ABOUT: 'Acerca de',
+    PROJECTS: 'Proyectos',
+    BLOGS: 'Blogs & vlogs',
+    CONTACT: 'Contacto',
+  },
   HOME: {
     WELCOME: 'Bienvenido a',
     ALL_RIGHT_RESERVED: 'Todos los derechos reservados',

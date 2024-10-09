@@ -30,6 +30,7 @@ const LayoutComponent: React.FC<Props> = ({
 }) => {
   const {
     HOME: { ALL_RIGHT_RESERVED },
+    LEFT_PANEL: { HOME, ABOUT, PROJECTS, BLOGS, CONTACT },
   } = useWords()
 
   return (
@@ -55,7 +56,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                HOME
+                {HOME}
               </Link>
             </LiItem>
 
@@ -67,7 +68,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                Acerca de
+                {ABOUT}
               </Link>
             </LiItem>
 
@@ -79,7 +80,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                Proyectos
+                {PROJECTS}
               </Link>
             </LiItem>
 
@@ -91,7 +92,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                BLOGS & VLOGS
+                {BLOGS}
               </Link>
             </LiItem>
 
@@ -103,7 +104,7 @@ const LayoutComponent: React.FC<Props> = ({
                 duration={500}
                 activeClass='active'
               >
-                CONTACTO
+                {CONTACT}
               </Link>
             </LiItem>
           </LinksListContent>
