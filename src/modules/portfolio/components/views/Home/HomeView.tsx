@@ -1,5 +1,5 @@
 import React from 'react'
-import { HomeViewWrapper } from './styles'
+import { HomeViewWrapper, LangContainer } from './styles'
 import LayoutComponent from '@/modules/portfolio/components/common/layout'
 import HomeArticle from './HomeArticle'
 import AboutArticle from './AboutArticle'
@@ -8,11 +8,16 @@ import WorksArticle from './WorksArticle'
 import { Element } from 'react-scroll'
 import BlogsArticle from './BlogsArticle'
 import ContactArticle from './ContactArticle'
+import LangSelector from '@/modules/examples/components/shared/LangSelector'
 
 const HomeViewComponent = () => {
   return (
     <LayoutComponent>
       <HomeViewWrapper>
+        <LangContainer>
+          <LangSelector className='lang-selector' />
+        </LangContainer>
+
         <Element name='home'>
           <HomeArticle />
           <Divider />

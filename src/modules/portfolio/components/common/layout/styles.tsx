@@ -38,6 +38,7 @@ export const RightLayout = styled('div')`
   background-color: ${({ theme }) => theme.palette.white?.main};
   flex: 1;
   min-width: 0;
+  overflow-x: hidden;
 `
 
 export const TitleH1 = styled('h1')`

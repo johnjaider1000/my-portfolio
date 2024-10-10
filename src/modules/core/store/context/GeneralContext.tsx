@@ -101,20 +101,7 @@ export const GeneralContextProvider = ({
         toggleBannerStatus,
       }}
     >
-      <LangContainer>
-        <LangSelector className='lang-selector' />
-      </LangContainer>
-
       {children}
     </GeneralContext.Provider>
   )
 }
-
-const LangContainer = styled('div')`
-  .lang-selector {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9;
-  }
-`

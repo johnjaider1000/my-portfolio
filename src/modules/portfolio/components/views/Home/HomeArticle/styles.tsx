@@ -4,7 +4,7 @@ export const HomeArticleWrapper = styled('article')`
   width: 100%;
   background-color: ${({ theme }) => theme.palette.white?.main};
   height: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 68px);
   display: flex;
   align-content: center;
   align-items: center;
